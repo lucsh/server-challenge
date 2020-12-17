@@ -11,6 +11,8 @@ const config = require('./config');
 
 const putOne = require('./service/putOne');
 const deleteOne = require('./service/deleteOne');
+const getAll = require('./service/getAll');
+const getOne = require('./service/getOne');
 
 const app = express();
 
@@ -39,6 +41,11 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 app.disable('x-powered-by');
 
 app.put('/timezones/:name', putOne);
+
 app.delete('/timezones/:name', deleteOne);
+
+app.get('/timezones', getAll);
+
+app.get('/timezones/:name', getOne);
 
 app.listen(config.port, () => console.log(`Server running -> http://localhost:${config.port}`));
