@@ -15,7 +15,7 @@ Or use the redis docker
 ### Clone the repo
 
 ```bash
-git clone url
+git clone https://github.com/lucsh/server-challenge.git
 ```
 
 ### Install dependencies
