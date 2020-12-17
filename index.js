@@ -9,6 +9,8 @@ require('dotenv').config();
 
 const config = require('./config');
 
+const putOne = require('./service/putOne');
+
 const app = express();
 
 const { allowedOrigins } = config;
@@ -35,8 +37,6 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 // remove the express header
 app.disable('x-powered-by');
 
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
+app.put('/timezones/:name', putOne);
 
 app.listen(config.port, () => console.log(`Server running -> http://localhost:${config.port}`));
