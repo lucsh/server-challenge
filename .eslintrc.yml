@@ -1,0 +1,22 @@
+extends:
+  - airbnb-base
+
+env:
+  jest: true
+  node: true
+
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: script
+
+rules:
+  'comma-dangle': [ 'error', 'never' ]
+  'strict': [ 'error', 'global' ]
+  'no-trailing-spaces': [ 'error', { skipBlankLines: true } ]
+  'max-len': [ 'error', { 'code': 100 } ]
+  'no-underscore-dangle': [ 'error', { allow: [ '_id' ] } ]
+  'semi': [ 'error', 'always' ]
+  'func-names': ['error', 'never']
+
+plugins:
+  - mocha
