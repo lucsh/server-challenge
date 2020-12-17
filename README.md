@@ -58,15 +58,15 @@ npm test
 
 The REST API to the Challenge app is described below.
 
-##Get a list of timezones
+## Get a list of timezones
 
-###Request
+### Request
 
 `GET /timezones/`
 
     curl -i -H 'Accept: application/json' http://localhost:3030/timezones/
 
-###Response
+### Response
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
@@ -78,13 +78,13 @@ The REST API to the Challenge app is described below.
 
     []
 
-###Request
+### Request
 
 `GET /timezones/:name`
 
     curl -i -H 'Accept: application/json' http://localhost:3030/timezones/America%2FArgentina%2FBuenos_Aires
 
-###Response
+### Response
 
     HTTP/1.1 200 OK
     Vary: Origin
@@ -101,13 +101,13 @@ The REST API to the Challenge app is described below.
       date
     }
 
-###Request
+### Request
 
 `PUT /timezones/:name`
 
     curl -i -H 'Accept: application/json' -H 'x-idempotence-key: XXX-YYY' -X PUT http://localhost:3030/timezones/America%2FArgentina%2FBuenos_Aires
 
-###Response
+### Response
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
@@ -121,13 +121,13 @@ The REST API to the Challenge app is described below.
       message
     }
 
-###Request
+### Request
 
 `DELETE /timezones/:name`
 
     curl -i -H 'Accept: application/json' -H 'x-idempotence-key: XXX-XXX' -X DELETE http://localhost:3030/timezones/America%2FArgentina%2FBuenos_Aires
 
-###Response
+### Response
 
     HTTP/1.1 204 No Content
     ETag: W/"3d-OATd44s2lGwA/itCm1VnEuTyzV8"
